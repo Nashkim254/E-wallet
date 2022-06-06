@@ -22,6 +22,10 @@ part 'package:next_millionnaire/Modules/Splash/view.dart';
 part 'package:next_millionnaire/Modules/Onboarding/controller.dart';
 part 'package:next_millionnaire/Modules/Onboarding/views.dart';
 
-//Onboarding
+//reg
 part 'package:next_millionnaire/Modules/Registration/controller.dart';
 part 'package:next_millionnaire/Modules/Registration/view.dart';
+
+//signin
+part 'package:next_millionnaire/Modules/Signin/controller.dart';
+part 'package:next_millionnaire/Modules/Signin/view.dart';

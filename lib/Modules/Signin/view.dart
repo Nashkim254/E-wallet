@@ -1,7 +1,7 @@
 part of 'package:next_millionnaire/imports.dart';
 
-class RegisterView extends StatelessWidget {
-  RegisterView({Key? key}) : super(key: key);
+class SigninView extends StatelessWidget {
+  SigninView({Key? key}) : super(key: key);
   final controller = Get.put(RegController());
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class RegisterView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 91.0, left: 41),
               child: Text(
-                "Register",
+                "Log In",
                 style: theme.textTheme.bodyText1!.copyWith(
                     fontSize: 24,
                     color: blackColor,
@@ -28,40 +28,6 @@ class RegisterView extends StatelessWidget {
                   children: [
                     Padding(
                         padding: const EdgeInsets.fromLTRB(41, 41, 41, 5),
-                        child: TextFormField(
-                            keyboardType: TextInputType.phone,
-                            validator: (value) {},
-                            onChanged: (value) {},
-                            style: TextStyle(
-                              color: accentColor,
-                              fontSize: 15,
-                            ),
-                            decoration: InputDecoration(
-                              hintText: "Full name",
-                              border: const OutlineInputBorder(
-                                borderSide: BorderSide(),
-                              ),
-                              hintStyle: const TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.black45,
-                                  fontWeight: FontWeight.w500),
-                              fillColor: Colors.white,
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                                borderSide: BorderSide(
-                                  color: primaryColor,
-                                ),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                                borderSide: BorderSide(
-                                  color: formFieldColor,
-                                  width: 2.0,
-                                ),
-                              ),
-                            ))),
-                    Padding(
-                        padding: const EdgeInsets.fromLTRB(41, 12, 41, 5),
                         child: TextFormField(
                             keyboardType: TextInputType.phone,
                             validator: (value) {},
@@ -128,40 +94,6 @@ class RegisterView extends StatelessWidget {
                                 ),
                               ),
                             ))),
-                    Padding(
-                        padding: const EdgeInsets.fromLTRB(41, 12, 41, 5),
-                        child: TextFormField(
-                            keyboardType: TextInputType.phone,
-                            validator: (value) {},
-                            onChanged: (value) {},
-                            style: TextStyle(
-                              color: accentColor,
-                              fontSize: 15,
-                            ),
-                            decoration: InputDecoration(
-                              hintText: "Confirm password",
-                              border: const OutlineInputBorder(
-                                borderSide: BorderSide(),
-                              ),
-                              hintStyle: const TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.black45,
-                                  fontWeight: FontWeight.w500),
-                              fillColor: Colors.white,
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                                borderSide: BorderSide(
-                                  color: primaryColor,
-                                ),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                                borderSide: BorderSide(
-                                  color: formFieldColor,
-                                  width: 2.0,
-                                ),
-                              ),
-                            ))),
                   ],
                 )),
             Padding(
@@ -170,7 +102,7 @@ class RegisterView extends StatelessWidget {
                   buttoncolor: primaryColor,
                   height: 56,
                   label: Text(
-                    "Register",
+                    "Log In",
                     style: TextStyle(
                         fontSize: 14,
                         color: cardLightColor,
@@ -181,7 +113,7 @@ class RegisterView extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.fromLTRB(41, 74, 0, 5),
                 child: Text(
-                  "Already have an account?",
+                  "Don’t have an account?",
                   style: TextStyle(
                       fontSize: 14,
                       color: cardDarkColor,
@@ -190,9 +122,9 @@ class RegisterView extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.fromLTRB(41, 11, 0, 5),
                 child: InkWell(
-                  onTap: (()=>Get.to(SigninView())),
+                  onTap: (()=>Get.to(RegisterView())),
                   child: Text(
-                    "L O G IN   ->",
+                    "R E G I S T E R   ->",
                     style: TextStyle(
                         fontSize: 14,
                         color: primaryColor,
