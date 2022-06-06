@@ -16,3 +16,12 @@ part 'package:next_millionnaire/Utils/Configs/settings/settings_service.dart';
 //Splash
 part 'package:next_millionnaire/Modules/Splash/controller.dart';
 part 'package:next_millionnaire/Modules/Splash/view.dart';
+
+
+//Onboarding
+part 'package:next_millionnaire/Modules/Onboarding/controller.dart';
+part 'package:next_millionnaire/Modules/Onboarding/views.dart';
+
+//Onboarding
+part 'package:next_millionnaire/Modules/Registration/controller.dart';
+part 'package:next_millionnaire/Modules/Registration/view.dart';

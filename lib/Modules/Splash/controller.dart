@@ -57,18 +57,18 @@ class SplashScreenController extends GetxController {
       visitor = true;
     }
 
-    // if (visitor) {
-    //   Get.off(() => Home(),
-    //       curve: Curves.fastOutSlowIn,
-    //       transition: Transition.fadeIn,
-    //       duration: const Duration(milliseconds: 1500));
-    // }  
-    // else {
-    //     Get.off(() => Onboarding(),
-    //         curve: Curves.fastOutSlowIn,
-    //         transition: Transition.fadeIn,
-    //         duration: const Duration(milliseconds: 1500));
-    //   }
+    if (visitor) {
+      Get.off(() => OnBoardingView(),
+          curve: Curves.fastOutSlowIn,
+          transition: Transition.fadeIn,
+          duration: const Duration(milliseconds: 1500));
+    }  
+    else {
+        Get.off(() => OnBoardingView(),
+            curve: Curves.fastOutSlowIn,
+            transition: Transition.fadeIn,
+            duration: const Duration(milliseconds: 1500));
+      }
     }
   
 }

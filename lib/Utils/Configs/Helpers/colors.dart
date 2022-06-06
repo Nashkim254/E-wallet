@@ -23,7 +23,7 @@ Color blackColor = const Color(0xff000000);
 
 // Card Color
 Color cardLightColor = const Color(0xffFFFFFF);
-Color cardDarkColor = const Color(0xff1C1C1C);
+Color cardDarkColor = const Color(0xff151940);
 
 // Unselected Color i.e TextTield, RadioButton
 Color unSelectedLight = const Color(0xffC5CEE0);
@@ -59,7 +59,7 @@ Color blueColor = const Color(0xff2196f3);
 Color blueShade300 = const Color(0xff64b5f6);
 Color failColor = const Color(0xffF0642F);
 Color textColor = const Color(0xff898989);
-Color containerColor = const Color(0xffEDEDED);
+Color containerColor = const Color(0xffF5F6FA);
 Color greyColor = const Color(0xff9e9e9e);
 Color whiteShadeColor = const Color(0xffeeeeee);
 Color textColorgrey = const Color(0xff707070);
