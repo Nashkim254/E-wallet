@@ -22,7 +22,7 @@ class RegisterView extends StatelessWidget {
               ),
             ),
             Form(
-                key: controller._formKeyLogIn,
+                key: controller._formKeyReg,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -176,7 +176,9 @@ class RegisterView extends StatelessWidget {
                         color: cardLightColor,
                         fontWeight: FontWeight.w500),
                   ),
-                  onPress: () {},
+                  onPress: () {
+                    Get.to(NavigationView());
+                  },
                 )),
             Padding(
                 padding: const EdgeInsets.fromLTRB(41, 74, 0, 5),
@@ -190,7 +192,7 @@ class RegisterView extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.fromLTRB(41, 11, 0, 5),
                 child: InkWell(
-                  onTap: (()=>Get.to(SigninView())),
+                  onTap: (() => Get.to(SigninView())),
                   child: Text(
                     "L O G IN   ->",
                     style: TextStyle(

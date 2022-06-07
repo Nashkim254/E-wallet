@@ -54,7 +54,7 @@ class _SplashScreenView extends State<SplashScreenView> {
                   fontWeight: FontWeight.w400),
             ),
             Padding(
-              padding: const EdgeInsets.only(top:78.0),
+              padding: const EdgeInsets.only(top: 78.0),
               child: CustomButton(
                 buttoncolor: cardLightColor,
                 label: Text(
@@ -64,7 +64,9 @@ class _SplashScreenView extends State<SplashScreenView> {
                       color: primaryColor,
                       fontWeight: FontWeight.w700),
                 ),
-                onPress: () {},
+                onPress: () {
+                  Get.to(NavigationView());
+                },
                 height: 56,
               ),
             )

@@ -2,7 +2,7 @@ part of 'package:next_millionnaire/imports.dart';
 
 class SigninView extends StatelessWidget {
   SigninView({Key? key}) : super(key: key);
-  final controller = Get.put(RegController());
+  final controller = Get.put(SigninController());
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -108,12 +108,29 @@ class SigninView extends StatelessWidget {
                         color: cardLightColor,
                         fontWeight: FontWeight.w500),
                   ),
-                  onPress: () {},
+                  onPress: () {
+                    Get.to(NavigationView());
+                  },
+                )),
+            Align(
+                alignment: Alignment.bottomRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 41.0, top: 7),
+                  child: InkWell(
+                    onTap: () => Get.to(ForgotPasswordView()),
+                    child: Text(
+                      "Forgot Password?",
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: primaryColor,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
                 )),
             Padding(
                 padding: const EdgeInsets.fromLTRB(41, 74, 0, 5),
                 child: Text(
-                  "Don’t have an account?",
+                  "Don't have an account?",
                   style: TextStyle(
                       fontSize: 14,
                       color: cardDarkColor,
@@ -122,7 +139,7 @@ class SigninView extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.fromLTRB(41, 11, 0, 5),
                 child: InkWell(
-                  onTap: (()=>Get.to(RegisterView())),
+                  onTap: (() => Get.to(RegisterView())),
                   child: Text(
                     "R E G I S T E R   ->",
                     style: TextStyle(

@@ -29,3 +29,20 @@ part 'package:next_millionnaire/Modules/Registration/view.dart';
 //signin
 part 'package:next_millionnaire/Modules/Signin/controller.dart';
 part 'package:next_millionnaire/Modules/Signin/view.dart';
+part 'package:next_millionnaire/Modules/Signin/forgot_password.dart';
+
+//Navigation
+part 'package:next_millionnaire/Modules/Navigation/controller.dart';
+part 'package:next_millionnaire/Modules/Navigation/views.dart';
+
+//Reports
+part 'package:next_millionnaire/Modules/Reports/controller.dart';
+part 'package:next_millionnaire/Modules/Reports/view.dart';
+
+//Home
+part 'package:next_millionnaire/Modules/Home/controller.dart';
+part 'package:next_millionnaire/Modules/Home/view.dart';
+
+//Reports
+part 'package:next_millionnaire/Modules/Profile/controller.dart';
+part 'package:next_millionnaire/Modules/Profile/view.dart';
