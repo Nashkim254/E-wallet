@@ -16,3 +16,4 @@ part 'Helpers/fingerprint_controller.dart';
 part 'Helpers/theme.dart';
 part 'Helpers/input_formerter.dart';
 part 'Helpers/custom_button.dart';
+part 'Helpers/custom_name.dart';
