@@ -3,6 +3,7 @@ part of 'package:next_millionnaire/imports.dart';
 class RegisterView extends StatelessWidget {
   RegisterView({Key? key}) : super(key: key);
   final controller = Get.put(RegController());
+  final _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -29,9 +30,9 @@ class RegisterView extends StatelessWidget {
                     Padding(
                         padding: const EdgeInsets.fromLTRB(41, 41, 41, 5),
                         child: TextFormField(
+                            controller: controller.nameCont,
                             keyboardType: TextInputType.phone,
-                            validator: (value) {},
-                            onChanged: (value) {},
+                            validator: (value) => controller.validator(value!),
                             style: TextStyle(
                               color: accentColor,
                               fontSize: 15,
@@ -63,9 +64,10 @@ class RegisterView extends StatelessWidget {
                     Padding(
                         padding: const EdgeInsets.fromLTRB(41, 12, 41, 5),
                         child: TextFormField(
+                            controller: controller.emailCont,
                             keyboardType: TextInputType.phone,
-                            validator: (value) {},
-                            onChanged: (value) {},
+                            validator: (value) =>
+                                controller.emailValidator(value!),
                             style: TextStyle(
                               color: accentColor,
                               fontSize: 15,
@@ -97,9 +99,10 @@ class RegisterView extends StatelessWidget {
                     Padding(
                         padding: const EdgeInsets.fromLTRB(41, 12, 41, 5),
                         child: TextFormField(
+                            controller: controller.passCont,
                             keyboardType: TextInputType.phone,
-                            validator: (value) {},
-                            onChanged: (value) {},
+                            validator: (value) =>
+                                controller.passValidator(value!),
                             style: TextStyle(
                               color: accentColor,
                               fontSize: 15,
@@ -131,9 +134,15 @@ class RegisterView extends StatelessWidget {
                     Padding(
                         padding: const EdgeInsets.fromLTRB(41, 12, 41, 5),
                         child: TextFormField(
+                            controller: controller.confirmCont,
                             keyboardType: TextInputType.phone,
-                            validator: (value) {},
-                            onChanged: (value) {},
+                            validator: (value) {
+                              if (controller.passCont.text !=
+                                  controller.confirmCont.text) {
+                                "Passwords do not match";
+                              }
+                              return null;
+                            },
                             style: TextStyle(
                               color: accentColor,
                               fontSize: 15,
@@ -177,7 +186,21 @@ class RegisterView extends StatelessWidget {
                         fontWeight: FontWeight.w500),
                   ),
                   onPress: () {
-                    Get.to(NavigationView());
+                    if (controller._formKeyReg.currentState!.validate()) {
+                      try {
+                        final user = _auth.createUserWithEmailAndPassword(
+                            email: controller.emailCont.text,
+                            password: controller.passCont.text);
+                        if (user != null) {
+                          Get.to(const NavigationView());
+                        }
+                      } catch (e) {
+                        printError(e);
+                      }
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          content: Text("Please ensure all fields are valid")));
+                    }
                   },
                 )),
             Padding(
