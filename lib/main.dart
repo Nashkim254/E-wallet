@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:next_millionnaire/Utils/Configs/helpers.dart';
@@ -24,7 +26,8 @@ import 'package:next_millionnaire/imports.dart';
 Future<void> main() async {
   // Flutter Widgets.
   final settingsController = ThemeSettingsController(SettingsService());
-  WidgetsFlutterBinding.ensureInitialized();
+    WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 // You can request multiple permissions at once.
   // Workmanager().initialize(
   //     callbackDispatcher, // The top level function, aka callbackDispatcher
@@ -67,7 +70,15 @@ class _MyAppState extends State<MyApp> {
       theme: themeDataLight(context),
       darkTheme: themeDataDark(context),
       themeMode: widget.settingsController.themeMode,
-      home: SplashScreenView(),
+      home: StreamBuilder<User?>(
+                stream: FirebaseAuth.instance.authStateChanges(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return  NavigationView();
+                  }
+                  return SigninView();
+                },
+              ),
     );
   }
 }

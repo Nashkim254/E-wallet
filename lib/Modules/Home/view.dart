@@ -49,96 +49,97 @@ class HomeView extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 18.0, left: 20, right: 20),
-              child: Container(
+              child: SizedBox(
                 height: 243,
                 width: double.infinity,
-                decoration: BoxDecoration(
-                    color: primaryColor,
-                    borderRadius: const BorderRadius.all(Radius.circular(10))),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ListTile(
-                      leading: Icon(
-                        Icons.account_balance,
-                        color: cardLightColor,
+                child: Card(
+                  color: primaryColor,
+                  elevation: 5,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ListTile(
+                        leading: Icon(
+                          Icons.account_balance,
+                          color: cardLightColor,
+                        ),
+                        title: Text(
+                          "Overall Balance:",
+                          style: theme.textTheme.bodyText1!.copyWith(
+                              color: cardLightColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        trailing: Text(
+                          "Ksh. 4,000",
+                          style: theme.textTheme.bodyText1!.copyWith(
+                              color: cardLightColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
-                      title: Text(
-                        "Overall Balance:",
-                        style: theme.textTheme.bodyText1!.copyWith(
-                            color: cardLightColor,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600),
+                      ListTile(
+                        leading: Icon(
+                          Icons.money,
+                          color: cardLightColor,
+                        ),
+                        title: Text(
+                          "Deposit to:",
+                          style: theme.textTheme.bodyText1!.copyWith(
+                              color: cardLightColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        trailing: Text(
+                          "0190230003981 ",
+                          style: theme.textTheme.bodyText1!.copyWith(
+                              color: cardLightColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
-                      trailing: Text(
-                        "Ksh. 4,000",
-                        style: theme.textTheme.bodyText1!.copyWith(
-                            color: cardLightColor,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600),
+                      ListTile(
+                        leading: Icon(
+                          Icons.payments,
+                          color: cardLightColor,
+                        ),
+                        title: Text(
+                          "Paybill:",
+                          style: theme.textTheme.bodyText1!.copyWith(
+                              color: cardLightColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        trailing: Text(
+                          "862862",
+                          style: theme.textTheme.bodyText1!.copyWith(
+                              color: cardLightColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
-                    ),
-                    ListTile(
-                      leading: Icon(
-                        Icons.money,
-                        color: cardLightColor,
+                      ListTile(
+                        leading: Icon(
+                          Icons.attach_money,
+                          color: cardLightColor,
+                        ),
+                        title: Text(
+                          "My balance:",
+                          style: theme.textTheme.bodyText1!.copyWith(
+                              color: cardLightColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        trailing: Text(
+                          "1,000",
+                          style: theme.textTheme.bodyText1!.copyWith(
+                              color: cardLightColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
-                      title: Text(
-                        "Deposit to:",
-                        style: theme.textTheme.bodyText1!.copyWith(
-                            color: cardLightColor,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      trailing: Text(
-                        "0190230003981 ",
-                        style: theme.textTheme.bodyText1!.copyWith(
-                            color: cardLightColor,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                    ListTile(
-                      leading: Icon(
-                        Icons.payments,
-                        color: cardLightColor,
-                      ),
-                      title: Text(
-                        "Paybill:",
-                        style: theme.textTheme.bodyText1!.copyWith(
-                            color: cardLightColor,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      trailing: Text(
-                        "862862",
-                        style: theme.textTheme.bodyText1!.copyWith(
-                            color: cardLightColor,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                    ListTile(
-                      leading: Icon(
-                        Icons.attach_money,
-                        color: cardLightColor,
-                      ),
-                      title: Text(
-                        "My balance:",
-                        style: theme.textTheme.bodyText1!.copyWith(
-                            color: cardLightColor,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      trailing: Text(
-                        "1,000",
-                        style: theme.textTheme.bodyText1!.copyWith(
-                            color: cardLightColor,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -157,33 +158,91 @@ class HomeView extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left:20.0,right: 20,top: 40),
-              child: Container(
-                height: 150,
+              padding: const EdgeInsets.only(left: 20.0, right: 20, top: 40),
+              child: SizedBox(
+                height: 60,
                 width: double.infinity,
-                decoration: BoxDecoration(
-                    color: primaryColor,
-                    borderRadius: const BorderRadius.all(Radius.circular(10))),
-                child: ListTile(
-                  leading: Icon(Icons.inventory,color: cardLightColor,),
-                  title: Text(
-                    "Leading share holder:",
-                    style: theme.textTheme.bodyText1!.copyWith(
-                        color: cardLightColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
+                child: Card(
+                  elevation: 5,
+                  color: primaryColor,
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.inventory,
+                      color: cardLightColor,
+                    ),
+                    title: Text(
+                      "Monthly share:",
+                      style: theme.textTheme.bodyText1!.copyWith(
+                          color: cardLightColor,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    trailing: Text(
+                      "Ksh. 1,000",
+                      style: theme.textTheme.bodyText1!.copyWith(
+                          color: cardLightColor,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600),
+                    ),
                   ),
-                  subtitle: Text("Caleb",style: theme.textTheme.bodyText1!.copyWith(
-                        color: cardLightColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600),),
-                  trailing: Text("Ksh. 1,000",style: theme.textTheme.bodyText1!.copyWith(
-                        color: cardLightColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600),),
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(top: 40.0, left: 20),
+              child: Text(
+                "Transactions",
+                style: theme.textTheme.bodyText1!.copyWith(
+                    color: blackColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20, top: 40),
+              child: ListView.separated(
+                shrinkWrap: true,
+                itemCount: 5,
+                itemBuilder: (context, int index) {
+                  return Card(
+                    elevation: 5,
+                    child: ListTile(
+                      tileColor: primaryColor,
+                      leading: Icon(
+                        Icons.person,
+                        color: cardLightColor,
+                      ),
+                      title: Text(
+                        "Nashon",
+                        style: theme.textTheme.bodyText1!.copyWith(
+                            color: cardLightColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600),
+                      ),
+                       subtitle: Text(
+                        "Ksh. 1,000",
+                        style: theme.textTheme.bodyText1!.copyWith(
+                            color: cardLightColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      trailing: Text(
+                        "12/9/2020",
+                        style: theme.textTheme.bodyText1!.copyWith(
+                            color: cardLightColor,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  );
+                },
+                separatorBuilder: (context, int index) {
+                  return const SizedBox(
+                    height: 10,
+                  );
+                },
+              ),
+            )
           ],
         ),
       ),

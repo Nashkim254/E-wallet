@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "828232582250",
+    "project_id": "nextmillionnaire-df06f",
+    "storage_bucket": "nextmillionnaire-df06f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828232582250:android:e429a8eeb7fc6e2799b613",
+        "android_client_info": {
+          "package_name": "com.example.next_millionnaire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "828232582250-k6vuac8h7i8ruk9cp4eon6sam6evtf0h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.next_millionnaire",
+            "certificate_hash": "fdc1575eaba882bbc00f731b4b75326b47381963"
+          }
+        },
+        {
+          "client_id": "828232582250-3hne5uce2iavkcsu40p48fs540eie1p7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi2z90umHdBvAW__Ioeg-qC9ouOx0rg2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "828232582250-3hne5uce2iavkcsu40p48fs540eie1p7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
