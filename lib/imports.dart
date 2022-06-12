@@ -1,6 +1,7 @@
 //System Imports
 import 'dart:async';
 import 'dart:developer';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -45,6 +46,10 @@ part 'package:next_millionnaire/Modules/Reports/view.dart';
 part 'package:next_millionnaire/Modules/Home/controller.dart';
 part 'package:next_millionnaire/Modules/Home/view.dart';
 
-//Reports
+//profile
 part 'package:next_millionnaire/Modules/Profile/controller.dart';
 part 'package:next_millionnaire/Modules/Profile/view.dart';
+
+//Admin
+part 'package:next_millionnaire/Modules/Admin/controller.dart';
+part 'package:next_millionnaire/Modules/Admin/view.dart';

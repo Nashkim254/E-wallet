@@ -179,7 +179,14 @@ class _ProfileViewState extends State<ProfileView> {
                       ),
                     ),
                   ),
-                
+                  const SizedBox(height: 40),
+                  ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(primaryColor)),
+                    onPressed: ()=> Get.to(Admin()),
+                    child: const Text('Admin'),
+                  ),
                   const SizedBox(height: 40),
                   ElevatedButton(
                       style: ButtonStyle(

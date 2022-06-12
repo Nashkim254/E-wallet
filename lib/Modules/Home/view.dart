@@ -1,13 +1,27 @@
 part of 'package:next_millionnaire/imports.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   HomeView({Key? key}) : super(key: key);
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
   final controller = Get.put(HomeViewController());
+  late User user;
+  @override
+  void initState() {
+    super.initState();
+    user = FirebaseAuth.instance.currentUser!;
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
       backgroundColor: cardLightColor,
+      
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,14 +44,14 @@ class HomeView extends StatelessWidget {
                 ),
               ),
               title: Text(
-                "${controller.greeting(context)} Nashon,",
+                "${controller.greeting(context)} ${user.displayName},",
                 style: theme.textTheme.bodyText1!.copyWith(
                     color: blackColor,
                     fontSize: 20,
                     fontWeight: FontWeight.w600),
               ),
               subtitle: Text(
-                "Nashon's account,",
+                "${user.displayName}'s account,",
                 style: theme.textTheme.bodyText1!.copyWith(
                     color: blackColor,
                     fontSize: 12,
@@ -203,6 +217,7 @@ class HomeView extends StatelessWidget {
               child: ListView.separated(
                 shrinkWrap: true,
                 itemCount: 5,
+                physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, int index) {
                   return Card(
                     elevation: 5,
@@ -219,7 +234,7 @@ class HomeView extends StatelessWidget {
                             fontSize: 16,
                             fontWeight: FontWeight.w600),
                       ),
-                       subtitle: Text(
+                      subtitle: Text(
                         "Ksh. 1,000",
                         style: theme.textTheme.bodyText1!.copyWith(
                             color: cardLightColor,

@@ -6,6 +6,18 @@ class RegisterView extends StatelessWidget {
   final _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
+       // Create a CollectionReference called users that references the firestore collection
+    CollectionReference users = FirebaseFirestore.instance.collection('users');
+     Future<void> addUser() {
+      // Call the user's CollectionReference to add a new user
+      return users.doc("members")
+          .set({
+            'username':controller.nameCont.text,
+            'email': controller.emailCont.text,// 42
+          })
+          .then((value) => print("User Added"))
+          .catchError((error) => print("Failed to add user: $error"));
+    }
     final theme = Theme.of(context);
     return Scaffold(
       body: SingleChildScrollView(
@@ -187,10 +199,12 @@ class RegisterView extends StatelessWidget {
                   ),
                   onPress: () {
                     if (controller._formKeyReg.currentState!.validate()) {
+                      
                       try {
                         final user = _auth.createUserWithEmailAndPassword(
                             email: controller.emailCont.text,
                             password: controller.passCont.text);
+                             addUser();
                         if (user != null) {
                           Get.to(const NavigationView());
                         }
